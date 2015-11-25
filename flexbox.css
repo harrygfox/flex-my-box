@@ -1,0 +1,89 @@
+/* Basic Styles for viewing the items */
+    /* Style defined here are for browser desktop viewing only */
+
+.container {
+    /* no width or height is defined because it it not the correct approach when dealing with flex-box */
+        /* harks back to the idea that we should let the content define the size of the page */
+    margin: 3em;
+    box-sizing: border-box;
+    padding: 2em;
+    background-image: linear-gradient(115deg, rgba(150, 54, 120, .2), rgba(199, 57, 155, .2));
+    box-shadow: 0 12px 20px -6px rgb(51, 51, 51);
+    border: solid 1px #ccc;
+    border-radius: 4px;
+}
+.item {
+    padding: 0.7em;
+    margin: 10px;
+    background-color: rgb(71,175,226);
+    border-radius: 5px;
+}
+
+
+
+/* FLEX BOX STYLES */
+
+.container1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+        /* Pushes content to the edges and spaces them out equally */
+}
+.container1 .item1 {
+    margin-right: auto;
+        /* Puts ALL of the surrounding space to the right of item1 */
+}
+
+.container1 .item4 {
+    order: 1;
+    /* all flex-items have an order value of 0 by default */
+        /* This kind of ordering is particularly powerful when considering the layout
+            you want on a mobile compared to desktop  */
+}
+
+/* //////////////////////////// */
+
+.container2 {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+
+    background-image: linear-gradient(115deg, rgba(120, 54, 150, .2), rgba(155, 57, 199, .2));
+}
+
+.container2 .item {
+    flex-grow: 1;
+        /* Flex-grow value is 0 by default */
+        /* A value of 1 to all flex-items within a flex-container causes those items
+            to expand in content size to fill all of the available space. */
+}
+
+.container2 .item3 {
+    flex-grow: 4;
+        /* This declaration gives the 3rd item 4 times as much space proportionally 
+            to all other items. */
+}
+
+
+/* //////////////////////////// */
+
+.container3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container3 .item {
+    flex: 1 10em;
+        /* Flex property is shorthand for flex-grow, (flex-shrink is optional), and flex
+            -base which is defined as: */
+            /*  the default size of an element before the remaining space is distributed. 
+                It can be a length (e.g. 20%, 5rem, etc.) or a keyword.  */
+
+            /*  i.e. the minimum size of an element before it is broken on to a new line*/
+}
+
+
+
+
+
